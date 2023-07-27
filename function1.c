@@ -10,25 +10,25 @@
  */
 int print_decimal(va_list args, char buffer[], int width)
 {
-        int num = va_arg(args, int);
-        int i = BUFF_SIZE - 1;
-        int is_negative = 0;
+	int num = va_arg(args, int);
+	int i = BUFF_SIZE - 1;
+	int is_negative = 0;
 
-        if (num < 0)
-        {
-                is_negative = 1;
-                num = -num;
-        }
+	if (num < 0)
+	{
+		is_negative = 1;
+		num = -num;
+	}
 
-        while (num > 0)
-        {
-                buffer[i] = num % 10 + '0';
-                num /= 10;
-                i--;
-        }
+	while (num > 0)
+	{
+		buffer[i] = num % 10 + '0';
+		num /= 10;
+		i--;
+	}
 
-        if (is_negative)
-        {
-                buffer[i] = '-';
-                i--;
-        }
+	if (is_negative)
+	{
+		buffer[i] = '-';
+		i--;
+	}
